@@ -4,7 +4,7 @@ void SplendidoParticle::interact(){
   m_isHappy = true;
   ParticleBase tp(ParticleBase::theoryParticle());
   ParticleBase* closest(&tp);
-  for (vector<ParticleBase*>::const_iterator it = (*InteractingParticle::m_particles).begin(); 
+  for (vector<ParticleBase*>::iterator it = (*InteractingParticle::m_particles).begin(); 
         it!=(*InteractingParticle::m_particles).end(); it++) {
     if( this->distance(*it) <= this->distance(closest) && (*it)!=this)
       	closest = *it;   }

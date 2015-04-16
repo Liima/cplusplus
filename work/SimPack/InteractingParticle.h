@@ -16,7 +16,7 @@ public:
     	ParticleBase::tick(t);
     };
 protected:
- const vector<ParticleBase*>* m_particles;
+  vector<ParticleBase*>* m_particles;
 private:
   virtual void interact(){};
 };

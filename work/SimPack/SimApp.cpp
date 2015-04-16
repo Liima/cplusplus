@@ -35,10 +35,10 @@ SimApp::SimApp(int argc, char *argv[], string title, int w, int h)
 	m_window.add(m_playground);
 
 	// units for x,y,w,h are in meters...
+
+		m_playground.add(new GravitonParticle(&m_playground, 901));
+		m_playground.add(new GravitonParticle(&m_playground, 901));
 	for(int i(0);i<100;i++){m_playground.add(new SplendidoParticle(&m_playground));}
-		
-
-
 
    	m_playground.show();
  	

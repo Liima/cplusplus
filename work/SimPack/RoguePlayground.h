@@ -18,9 +18,10 @@ public:
   	}
  private:
  	bool switchParticle(){
- 			std::cout << "switching" <<std::endl;
- 			ParticleBase* rogueCell(getParticles()->at(rand()%getParticles()->size()));
-  			getParticles()->at(rand()%getParticles()->size()) = new  ParticleBase(rogueCell->getX(), rogueCell->getY(), rogueCell->getW(),
+ 		//	std::cout << "switching" <<std::endl;
+ 			int rogue(rand()%getParticles()->size());
+ 			ParticleBase* rogueCell(getParticles()->at(rogue));
+  			getParticles()->at(rogue) = new  ParticleBase(rogueCell->getX(), rogueCell->getY(), rogueCell->getW(),
   			 rogueCell->getH(), rogueCell->getVX(), rogueCell->getVY());
   			return true;
 }

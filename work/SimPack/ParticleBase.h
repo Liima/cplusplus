@@ -46,7 +46,7 @@ public:
              dY==0.0 && dX>0.0 ? 0.5 :
              dY==0.0 && dX<0.0 ? 1.5 : atan2(dY,dX);
     }
-    static ParticleBase theoryParticle(){return ParticleBase(999999,999999,1,1,0,0);}
+    static ParticleBase theoryParticle(){return ParticleBase(999999,999999,0,0,0,0);}
 
 protected:
   Color color;

@@ -44,10 +44,13 @@ bool ParticlePlayground::on_draw(const Cairo::RefPtr<Cairo::Context>& cr)
 
 void ParticlePlayground::tick(long t)
 {
-    for (vector<ParticleBase*>::const_iterator it = m_particles.begin(); 
-        it!=m_particles.end(); it++) 
+    bool done = false;
+    vector<ParticleBase*>::iterator it = m_particles.begin();
+    while(!done) 
     {
             (*it)->tick(t);
+            it++;
+            done = it==m_particles.end();
     }    
     queue_draw();
 }

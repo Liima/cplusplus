@@ -13,6 +13,7 @@ class GravitonParticle : public InteractingParticle {
     	virtual ~GravitonParticle() {}
 	private:
  		void interact();
+ 		void eatParticle(vector<ParticleBase*>::iterator eaten);
  		double fieldStrength;
 };
 #endif

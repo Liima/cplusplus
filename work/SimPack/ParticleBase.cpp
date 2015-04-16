@@ -1,7 +1,6 @@
 #include "ParticleBase.h"
 #include "SimApp.h"
 
-
 void ParticleBase::draw(int win_height, int win_width, 
   const Cairo::RefPtr<Cairo::Context>& cr)
 {
@@ -20,23 +19,18 @@ void ParticleBase::draw(int win_height, int win_width,
     setY(SimApp::getMetersPerPixel()*(ypix+win_height));
 
   cr->save();
-
   cr->set_line_width(1.0);
-
   cr->set_source_rgba(color.red(), color.green(), color.blue(), color.alpha());
   cr->arc(xpix, ypix, wpix / 2.0, 0.0, 2.0 * M_PI);
   cr->fill_preserve();
   cr->stroke();
-
   cr->restore();
-  
 }
 
 void ParticleBase::tick(long t)
 {
 	double deltaX = ((getVX() / SimApp::getMetersPerPixel()) * SimApp::getSecPerTick());
 	double deltaY = ((getVY() / SimApp::getMetersPerPixel()) * SimApp::getSecPerTick());
-
 	setX(getX() + deltaX);
 	setY(getY() + deltaY);
 }
